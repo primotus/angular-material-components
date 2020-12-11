@@ -7,20 +7,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { RouterModule, Routes } from '@angular/router';
-import { MatColorFormats, MAT_COLOR_FORMATS, NgxMatColorPickerModule } from '../../../projects/color-picker/src/public-api';
+import { NgxMatRangeSliderModule } from '../../../projects/range-slider/src/public-api';
 import { SharedModule } from '../shared';
-import { DemoColorpickerComponent } from './demo-colorpicker.component';
+import { DemoRangeSliderComponent } from './demo-rangeslider.component';
 
 const routes: Routes = [
-  { path: '', component: DemoColorpickerComponent }
+  { path: '', component: DemoRangeSliderComponent }
 ]
 
-//'rgb' | 'hex' | 'hex6' | 'hex3' | 'hex4' | 'hex8'
-const CUSTOM_MAT_COLOR_FORMATS: MatColorFormats = {
-  display: {
-    colorInput: 'hex8'
-  }
-}
 
 @NgModule({
   imports: [
@@ -28,7 +22,7 @@ const CUSTOM_MAT_COLOR_FORMATS: MatColorFormats = {
     RouterModule.forChild(
       routes,
     ),
-    NgxMatColorPickerModule,
+    NgxMatRangeSliderModule,
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
@@ -38,11 +32,8 @@ const CUSTOM_MAT_COLOR_FORMATS: MatColorFormats = {
     MatSelectModule,
     SharedModule
   ],
-  providers: [
-    { provide: MAT_COLOR_FORMATS, useValue: CUSTOM_MAT_COLOR_FORMATS }
-  ],
   declarations: [
-    DemoColorpickerComponent
+    DemoRangeSliderComponent
   ]
 })
-export class DemoColorpickerModule { }
+export class DemoRangesliderModule { }

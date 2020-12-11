@@ -15,8 +15,14 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "lib": ["es5", "es2015", "dom"],
-    "types": ["node"],
+    "lib": [
+      "es5",
+      "es2015",
+      "dom"
+    ],
+    "types": [
+      "node"
+    ],
     "paths": {
       "@angular-material-components/*": [
         "dist/@angular-material-components/*"
@@ -38,6 +44,10 @@
       ],
       "file-input/*": [
         "dist/file-input/*"
+      ],
+      "range-slider": [
+        "dist/range-slider/range-slider",
+        "dist/range-slider"
       ]
     }
   }

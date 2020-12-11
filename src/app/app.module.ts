@@ -13,7 +13,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 
 
-
 const appRoutes: Routes = [
    { path: 'home', component: HomeComponent },
    {
@@ -31,6 +30,10 @@ const appRoutes: Routes = [
    {
       path: 'fileinput',
       loadChildren: () => import('./demo-fileinput/demo-fileinput.module').then(m => m.DemoFileInputModule)
+   },
+   {
+      path: 'rangeslider',
+      loadChildren: () => import('./demo-rangeslider/demo-rangeslider.module').then(m => m.DemoRangesliderModule)
    },
    { path: '', redirectTo: '/datetimepicker', pathMatch: 'full' },
    { path: '**', redirectTo: '/datetimepicker', pathMatch: 'full' }
