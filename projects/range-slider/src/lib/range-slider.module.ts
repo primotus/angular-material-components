@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { NgxMatRangeSliderComponent } from './components';
+import { NgxMatRangeSlider } from './components';
 
 @NgModule({
-  declarations: [NgxMatRangeSliderComponent],
+  declarations: [NgxMatRangeSlider],
   imports: [
+    CommonModule
   ],
-  exports: [NgxMatRangeSliderComponent]
+  exports: [NgxMatRangeSlider]
 })
 export class NgxMatRangeSliderModule { }
