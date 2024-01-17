@@ -8,12 +8,13 @@
 
 <mat-card class="zone zone-picker">
   <mat-card-content>
-    <ngx-mat-timepicker [(ngModel)]="date" [disabled]="disabled" [showSpinners]="showSpinners" [stepHour]="stepHour"
+    <ngx-mat-timepicker #timepicker [(ngModel)]="date" [disabled]="disabled" [showSpinners]="showSpinners" [stepHour]="stepHour"
       [stepMinute]="stepMinute" [stepSecond]="stepSecond" [showSeconds]="showSeconds" [color]="color"
       [enableMeridian]="enableMeridian" [disableMinute]="disableMinute" (modelChanged)="doChanged($event)">
     </ngx-mat-timepicker>
 
     <h4>Selected date: {{date?.toLocaleString()}}</h4>
+    <button (click)="clear()">Clear</button>
 
   </mat-card-content>
 </mat-card>

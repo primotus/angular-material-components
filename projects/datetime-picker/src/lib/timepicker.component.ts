@@ -40,6 +40,8 @@ export class NgxMatTimepickerComponent<D> implements ControlValueAccessor, OnIni
   @Input() enableMeridian = false;
   @Input() defaultTime: number[];
   @Input() color: ThemePalette = 'primary';
+  @Input() hasClearAction: boolean = false;
+  @Input() fontIconClearAction;
 
   @Output() modelChanged = new EventEmitter<D>();
 
@@ -114,7 +116,12 @@ export class NgxMatTimepickerComponent<D> implements ControlValueAccessor, OnIni
       this._model = val;
       this._updateHourMinuteSecond();
     }
+  }
 
+  clear(){
+    this.form.reset();
+    this._model = null;
+    this._onChange(null);
   }
 
   /** Registers a callback function that is called when the control's value changes in the UI. */
@@ -212,7 +219,7 @@ export class NgxMatTimepickerComponent<D> implements ControlValueAccessor, OnIni
         clonedModel = this._dateAdapter.setHour(clonedModel, _hour);
         clonedModel = this._dateAdapter.setMinute(clonedModel, this.minute);
         clonedModel = this._dateAdapter.setSecond(clonedModel, this.second);
-        this.writeValue(clonedModel);
+        this._model = clonedModel;
         this._onChange(clonedModel);
         this.modelChanged.emit(clonedModel);
       }

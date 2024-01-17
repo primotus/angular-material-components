@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 
 @Component({
@@ -21,6 +21,8 @@ export class DemoTimeComponent implements OnInit {
   doChanged($event){
     console.log($event)
   }
+
+  @ViewChild('timepicker', { static: true }) timepicker;
 
   public codeTimePicker = `<ngx-mat-timepicker
               [(ngModel)]="date" [disabled]="disabled"
@@ -48,5 +50,9 @@ export class DemoTimeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { }
+
+  clear(){
+    this.timepicker.clear();
+  }
 
 }
