@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, forwardRef, Input, OnChanges, OnInit, Optional, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Optional, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { Subject } from 'rxjs';
@@ -40,6 +40,8 @@ export class NgxMatTimepickerComponent<D> implements ControlValueAccessor, OnIni
   @Input() enableMeridian = false;
   @Input() defaultTime: number[];
   @Input() color: ThemePalette = 'primary';
+
+  @Output() modelChanged = new EventEmitter<D>();
 
   public meridian: string = MERIDIANS.AM;
 
@@ -200,6 +202,7 @@ export class NgxMatTimepickerComponent<D> implements ControlValueAccessor, OnIni
       clonedModel = this._dateAdapter.setMinute(clonedModel, this.minute);
       clonedModel = this._dateAdapter.setSecond(clonedModel, this.second);
       this._onChange(clonedModel);
+      this.modelChanged.emit(clonedModel);
     }
   }
 

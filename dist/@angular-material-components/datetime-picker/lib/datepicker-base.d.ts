@@ -249,6 +249,9 @@ export declare abstract class NgxMatDatepickerBase<C extends NgxMatDatepickerCon
     get defaultTime(): number[];
     set defaultTime(value: number[]);
     _defaultTime: number[];
+    get onlyTime(): boolean;
+    set onlyTime(value: boolean);
+    _onlyTime: boolean;
     /** The id for the datepicker calendar. */
     id: string;
     /** The minimum selectable date. */
@@ -318,6 +321,6 @@ export declare abstract class NgxMatDatepickerBase<C extends NgxMatDatepickerCon
     /** Gets an observable that will emit when the overlay is supposed to be closed. */
     private _getCloseStream;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxMatDatepickerBase<any, any, any>, [null, null, null, null, { optional: true; }, { optional: true; }, null]>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<NgxMatDatepickerBase<any, any, any>, never, never, { "calendarHeaderComponent": "calendarHeaderComponent"; "startAt": "startAt"; "startView": "startView"; "color": "color"; "touchUi": "touchUi"; "hideTime": "hideTime"; "disabled": "disabled"; "xPosition": "xPosition"; "yPosition": "yPosition"; "restoreFocus": "restoreFocus"; "dateClass": "dateClass"; "panelClass": "panelClass"; "opened": "opened"; "showSpinners": "showSpinners"; "showSeconds": "showSeconds"; "stepHour": "stepHour"; "stepMinute": "stepMinute"; "stepSecond": "stepSecond"; "enableMeridian": "enableMeridian"; "disableMinute": "disableMinute"; "defaultTime": "defaultTime"; }, { "yearSelected": "yearSelected"; "monthSelected": "monthSelected"; "viewChanged": "viewChanged"; "openedStream": "opened"; "closedStream": "closed"; }, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NgxMatDatepickerBase<any, any, any>, never, never, { "calendarHeaderComponent": "calendarHeaderComponent"; "startAt": "startAt"; "startView": "startView"; "color": "color"; "touchUi": "touchUi"; "hideTime": "hideTime"; "disabled": "disabled"; "xPosition": "xPosition"; "yPosition": "yPosition"; "restoreFocus": "restoreFocus"; "dateClass": "dateClass"; "panelClass": "panelClass"; "opened": "opened"; "showSpinners": "showSpinners"; "showSeconds": "showSeconds"; "stepHour": "stepHour"; "stepMinute": "stepMinute"; "stepSecond": "stepSecond"; "enableMeridian": "enableMeridian"; "disableMinute": "disableMinute"; "defaultTime": "defaultTime"; "onlyTime": "onlyTime"; }, { "yearSelected": "yearSelected"; "monthSelected": "monthSelected"; "viewChanged": "viewChanged"; "openedStream": "opened"; "closedStream": "closed"; }, never, never, false, never>;
 }
 export {};

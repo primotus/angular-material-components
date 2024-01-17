@@ -10,7 +10,7 @@
   <mat-card-content>
     <ngx-mat-timepicker [(ngModel)]="date" [disabled]="disabled" [showSpinners]="showSpinners" [stepHour]="stepHour"
       [stepMinute]="stepMinute" [stepSecond]="stepSecond" [showSeconds]="showSeconds" [color]="color"
-      [enableMeridian]="enableMeridian" [disableMinute]="disableMinute">
+      [enableMeridian]="enableMeridian" [disableMinute]="disableMinute" (modelChanged)="doChanged($event)">
     </ngx-mat-timepicker>
 
     <h4>Selected date: {{date?.toLocaleString()}}</h4>

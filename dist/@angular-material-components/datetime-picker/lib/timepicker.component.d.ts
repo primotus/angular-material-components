@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { NgxMatDateAdapter } from './core/date-adapter';
@@ -18,6 +18,7 @@ export declare class NgxMatTimepickerComponent<D> implements ControlValueAccesso
     enableMeridian: boolean;
     defaultTime: number[];
     color: ThemePalette;
+    modelChanged: EventEmitter<D>;
     meridian: string;
     /** Hour */
     private get hour();
@@ -72,5 +73,5 @@ export declare class NgxMatTimepickerComponent<D> implements ControlValueAccesso
      */
     private _setDisableStates;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxMatTimepickerComponent<any>, [{ optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxMatTimepickerComponent<any>, "ngx-mat-timepicker", ["ngxMatTimepicker"], { "disabled": "disabled"; "showSpinners": "showSpinners"; "stepHour": "stepHour"; "stepMinute": "stepMinute"; "stepSecond": "stepSecond"; "showSeconds": "showSeconds"; "disableMinute": "disableMinute"; "enableMeridian": "enableMeridian"; "defaultTime": "defaultTime"; "color": "color"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxMatTimepickerComponent<any>, "ngx-mat-timepicker", ["ngxMatTimepicker"], { "disabled": "disabled"; "showSpinners": "showSpinners"; "stepHour": "stepHour"; "stepMinute": "stepMinute"; "stepSecond": "stepSecond"; "showSeconds": "showSeconds"; "disableMinute": "disableMinute"; "enableMeridian": "enableMeridian"; "defaultTime": "defaultTime"; "color": "color"; }, { "modelChanged": "modelChanged"; }, never, never, false, never>;
 }

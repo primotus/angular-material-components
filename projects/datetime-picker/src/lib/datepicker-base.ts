@@ -552,6 +552,12 @@ export abstract class NgxMatDatepickerBase<
   set defaultTime(value: number[]) { this._defaultTime = value; }
   public _defaultTime: number[];
 
+
+  @Input()
+  get onlyTime(): boolean { return this._onlyTime; }
+  set onlyTime(value: boolean) { this._onlyTime = value; }
+  public _onlyTime: boolean = false;
+
   /** The id for the datepicker calendar. */
   id: string = `mat-datepicker-${datepickerUid++}`;
 
