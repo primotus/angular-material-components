@@ -3962,6 +3962,18 @@ class NgxMatTimepickerComponent {
             console.log("Emitiendo: ", clonedModel);
             this.modelChanged.emit(clonedModel);
         }
+        else {
+            if (this.form.controls['hour'].value && this.form.controls['minute'].value && this.form.controls['second'].value) {
+                const d = this._dateAdapter.today();
+                let clonedModel = this._dateAdapter.clone(d);
+                clonedModel = this._dateAdapter.setHour(clonedModel, _hour);
+                clonedModel = this._dateAdapter.setMinute(clonedModel, this.minute);
+                clonedModel = this._dateAdapter.setSecond(clonedModel, this.second);
+                this.writeValue(clonedModel);
+                this._onChange(clonedModel);
+                this.modelChanged.emit(clonedModel);
+            }
+        }
     }
     /**
      * Get next value by property
@@ -5289,5 +5301,4 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.0.2", ngImpor
  */
 
 export { DefaultNgxMatCalendarRangeStrategy, NGX_MAT_CALENDAR_RANGE_STRATEGY_PROVIDER, NGX_MAT_CALENDAR_RANGE_STRATEGY_PROVIDER_FACTORY, NGX_MAT_DATEPICKER_SCROLL_STRATEGY, NGX_MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY, NGX_MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER, NGX_MAT_DATEPICKER_VALIDATORS, NGX_MAT_DATEPICKER_VALUE_ACCESSOR, NGX_MAT_DATE_FORMATS, NGX_MAT_DATE_RANGE_INPUT_PARENT, NGX_MAT_DATE_RANGE_SELECTION_STRATEGY, NGX_MAT_NATIVE_DATE_FORMATS, NgxMatCalendar, NgxMatCalendarBody, NgxMatCalendarCell, NgxMatCalendarHeader, NgxMatDateAdapter, NgxMatDateRangeInput, NgxMatDateRangePicker, NgxMatDatepickerActions, NgxMatDatepickerApply, NgxMatDatepickerBase, NgxMatDatepickerCancel, NgxMatDatepickerContent, NgxMatDatepickerInput, NgxMatDatepickerToggle, NgxMatDatepickerToggleIcon, NgxMatDatetimePickerModule, NgxMatDatetimepicker, NgxMatEndDate, NgxMatMonthView, NgxMatMultiYearView, NgxMatNativeDateAdapter, NgxMatNativeDateModule, NgxMatStartDate, NgxMatTimepickerComponent, NgxMatTimepickerModule, NgxMatYearView, NgxNativeDateModule, getActiveOffset, isSameMultiYearView, yearsPerPage, yearsPerRow };
-//# sourceMappingURL=angular-material-components-datetime-picker.mjs.map
 //# sourceMappingURL=angular-material-components-datetime-picker.mjs.map

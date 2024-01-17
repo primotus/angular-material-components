@@ -202,7 +202,20 @@ export class NgxMatTimepickerComponent<D> implements ControlValueAccessor, OnIni
       clonedModel = this._dateAdapter.setMinute(clonedModel, this.minute);
       clonedModel = this._dateAdapter.setSecond(clonedModel, this.second);
       this._onChange(clonedModel);
+      console.log("Emitiendo: ", clonedModel)
       this.modelChanged.emit(clonedModel);
+    } else {
+
+      if ( this.form.controls['hour'].value &&  this.form.controls['minute'].value &&  this.form.controls['second'].value) {
+        const d = this._dateAdapter.today()
+        let clonedModel = this._dateAdapter.clone(d);
+        clonedModel = this._dateAdapter.setHour(clonedModel, _hour);
+        clonedModel = this._dateAdapter.setMinute(clonedModel, this.minute);
+        clonedModel = this._dateAdapter.setSecond(clonedModel, this.second);
+        this.writeValue(clonedModel);
+        this._onChange(clonedModel);
+        this.modelChanged.emit(clonedModel);
+      }
     }
   }
 
