@@ -122,6 +122,7 @@ export class NgxMatTimepickerComponent<D> implements ControlValueAccessor, OnIni
     this.form.reset();
     this._model = null;
     this._onChange(null);
+    this.modelChanged.emit(null);
   }
 
   /** Registers a callback function that is called when the control's value changes in the UI. */

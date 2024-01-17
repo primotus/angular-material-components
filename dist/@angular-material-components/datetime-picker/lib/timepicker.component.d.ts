@@ -18,6 +18,8 @@ export declare class NgxMatTimepickerComponent<D> implements ControlValueAccesso
     enableMeridian: boolean;
     defaultTime: number[];
     color: ThemePalette;
+    hasClearAction: boolean;
+    fontIconClearAction: any;
     modelChanged: EventEmitter<D>;
     meridian: string;
     /** Hour */
@@ -41,6 +43,7 @@ export declare class NgxMatTimepickerComponent<D> implements ControlValueAccesso
      * @param obj
      */
     writeValue(val: D): void;
+    clear(): void;
     /** Registers a callback function that is called when the control's value changes in the UI. */
     registerOnChange(fn: (_: any) => {}): void;
     /**
@@ -73,5 +76,5 @@ export declare class NgxMatTimepickerComponent<D> implements ControlValueAccesso
      */
     private _setDisableStates;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxMatTimepickerComponent<any>, [{ optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxMatTimepickerComponent<any>, "ngx-mat-timepicker", ["ngxMatTimepicker"], { "disabled": "disabled"; "showSpinners": "showSpinners"; "stepHour": "stepHour"; "stepMinute": "stepMinute"; "stepSecond": "stepSecond"; "showSeconds": "showSeconds"; "disableMinute": "disableMinute"; "enableMeridian": "enableMeridian"; "defaultTime": "defaultTime"; "color": "color"; }, { "modelChanged": "modelChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxMatTimepickerComponent<any>, "ngx-mat-timepicker", ["ngxMatTimepicker"], { "disabled": "disabled"; "showSpinners": "showSpinners"; "stepHour": "stepHour"; "stepMinute": "stepMinute"; "stepSecond": "stepSecond"; "showSeconds": "showSeconds"; "disableMinute": "disableMinute"; "enableMeridian": "enableMeridian"; "defaultTime": "defaultTime"; "color": "color"; "hasClearAction": "hasClearAction"; "fontIconClearAction": "fontIconClearAction"; }, { "modelChanged": "modelChanged"; }, never, never, false, never>;
 }
