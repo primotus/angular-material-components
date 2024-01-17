@@ -3959,6 +3959,7 @@ class NgxMatTimepickerComponent {
             clonedModel = this._dateAdapter.setMinute(clonedModel, this.minute);
             clonedModel = this._dateAdapter.setSecond(clonedModel, this.second);
             this._onChange(clonedModel);
+            console.log("Emitiendo: ", clonedModel);
             this.modelChanged.emit(clonedModel);
         }
     }
