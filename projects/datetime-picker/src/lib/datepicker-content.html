@@ -11,7 +11,8 @@
     [comparisonEnd]="comparisonEnd" [@fadeInCalendar]="'enter'" [startDateAccessibleName]="startDateAccessibleName"
     [endDateAccessibleName]="endDateAccessibleName" (yearSelected)="datepicker._selectYear($event)"
     (monthSelected)="datepicker._selectMonth($event)" (viewChanged)="datepicker._viewChanged($event)"
-    (_userSelection)="_handleUserSelection($event)" (_userDragDrop)="_handleUserDragDrop($event)"></ngx-mat-calendar>
+    (_userSelection)="_handleUserSelection($event)" (_userDragDrop)="_handleUserDragDrop($event)"
+    [ngStyle]="{'display': datepicker.onlyTime ? 'none' : 'block'}"></ngx-mat-calendar>
 
   <ng-container *ngIf="isViewMonth">
     <div *ngIf="!datepicker._hideTime" class="time-container" [class.disable-seconds]="!datepicker._showSeconds">

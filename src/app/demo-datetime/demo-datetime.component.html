@@ -393,7 +393,9 @@
           <input matInput [ngxMatDatetimePicker]="pickerWithActions" placeholder="Choose a date"
             [formControl]="dateControl" [min]="minDate" [max]="maxDate" [disabled]="disabled">
           <ngx-mat-datepicker-toggle matSuffix [for]="pickerWithActions"></ngx-mat-datepicker-toggle>
-          <ngx-mat-datetime-picker #pickerWithActions [showSpinners]="showSpinners" [showSeconds]="showSeconds"
+          <ngx-mat-datetime-picker
+            onlyTime="true"
+            #pickerWithActions [showSpinners]="showSpinners" [showSeconds]="showSeconds"
             [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond" [touchUi]="touchUi"
             [color]="color" [enableMeridian]="enableMeridian" [disableMinute]="disableMinute" [hideTime]="hideTime">
             <ngx-mat-datepicker-actions>
